@@ -1,21 +1,10 @@
-function PokemonCard() {
-  const pokemonList = [
-    {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "mew",
-    },
-  ];
-
-  const pokemon = pokemonList[1];
+function PokemonCard({ pokemon }) {
+  //on peut maintenant accéder aux propriétés passées à PokemonCard via props
 
   return (
     <figure>
       <figcaption> {pokemon.name}</figcaption>
-      {pokemon.imgSrc ? <img src={pokemon.imgSrc} /> : <p>???</p>}
+      {pokemon.imgSrc ? <img src={pokemon.imgSrc} /> : <p>???</p>}q
     </figure>
   );
 }
