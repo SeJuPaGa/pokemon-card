@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/NavBar";
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   //Fonction avec conditionnement pour aller à l'index précédent
@@ -39,16 +40,12 @@ function App() {
   return (
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      {pokemonIndex > 0 ? (
-        <button onClick={handlePrev}> precedent </button>
-      ) : (
-        ""
-      )}
-      {pokemonIndex < pokemonList.length - 1 ? (
-        <button onClick={handleNext}> suivant </button>
-      ) : (
-        ""
-      )}
+      <NavBar
+        pokemonIndex={pokemonIndex}
+        pokemonList={pokemonList}
+        handlePrev={handlePrev}
+        handleNext={handleNext}
+      />
     </div>
   );
 }
